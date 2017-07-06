@@ -36,6 +36,7 @@
 		// Avoid Plugin.prototype conflicts
 		$.extend( Plugin.prototype, {
 			init: function() {
+				$(this.element).trigger('init_begin');
 
                 if (typeof Vimeo === 'undefined' && $('html').attr('data-vimeotracker-api-loading') != 1) {
 					$('html').attr('data-vimeotracker-api-loading', 1);
